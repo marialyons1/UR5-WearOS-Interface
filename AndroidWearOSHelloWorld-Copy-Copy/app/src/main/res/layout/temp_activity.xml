@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.support.wear.widget.WearableRecyclerView-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:id="@+id/main_activity"-->
+<!--android:scrollbars="vertical"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:background="@drawable/accept_deny_dialog_negative_bg"-->
+<!--android:padding="15dp"-->
+<!--tools:context=".MainActivity"-->
+<!--tools:deviceIds="wear">-->
+<!--&lt;!&ndash; line 8 appeared to have no effect&ndash;&gt;-->
+
+
+<!--</android.support.wear.widget.WearableRecyclerView>-->
+
+
+<android.support.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
+    app:layout_box="left|bottom|right"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/accept_deny_dialog_negative_bg"
+    android:padding="15dp"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+    <!-- line 8 appeared to have no effect-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:boxedEdges="all"
+            tools:ignore="missingPrefix"
+            android:padding="15dp">
+            <!-- padding appeared to shift seekbar down slightly and tuck in the edges: perhaps is the offset from each edge rather than solely the top-->
+            <!--boxedEdges is important! It keeps the UI from going off the screen; it's necessary for round devices
+            and theoretically shouldn't impact the ui on a square screen since the inset of a square is 0.
+            It needs the tools:ignore="missingPrefix" in order to work properly; otherwise it throws an error.
+            -->
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:boxedEdges="all"
+                    tools:ignore="missingPrefix">
+
+                    <!--<Button-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:onClick="sendMessage" />-->
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/simpleSeekBar"
+                        android:padding="7dp"
+                        android:max="100"
+                        android:progress="50"/>
+                    <!--android:progressDrawable="@drawable/custom_progress"/>&lt;!&ndash; set custom progress drawable for the progress &ndash;&gt;-->
+
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sb1"
+                        android:padding="7dp" />
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sb2"
+                        android:padding="7dp"/>
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="7dp"/>
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sb3"
+                        android:padding="7dp"/>
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sb4"
+                        android:padding="7dp"/>
+
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/sb5"
+                        android:padding="7dp"/>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</android.support.wear.widget.BoxInsetLayout>
